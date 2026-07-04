@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>House Price Predictor</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🏠 House Price Predictor</h1>
+
+<p class="subtitle">
+Predict House Prices using Machine Learning
+</p>
+
+<form method="POST">
+
+<label>Area (sq.ft.)</label>
+<input type="number" name="area" required>
+
+<label>Bedrooms</label>
+<input type="number" name="bedrooms" required>
+
+<label>Bathrooms</label>
+<input type="number" name="bathrooms" required>
+
+<label>Stories</label>
+<input type="number" name="stories" required>
+
+<label>Parking</label>
+<input type="number" name="parking" required>
+
+<label>Main Road</label>
+<select name="mainroad">
+<option value="yes">Yes</option>
+<option value="no">No</option>
+</select>
+
+<label>Guest Room</label>
+<select name="guestroom">
+<option value="yes">Yes</option>
+<option value="no">No</option>
+</select>
+
+<label>Basement</label>
+<select name="basement">
+<option value="yes">Yes</option>
+<option value="no">No</option>
+</select>
+
+<label>Hot Water Heating</label>
+<select name="hotwaterheating">
+<option value="yes">Yes</option>
+<option value="no">No</option>
+</select>
+
+<label>Air Conditioning</label>
+<select name="airconditioning">
+<option value="yes">Yes</option>
+<option value="no">No</option>
+</select>
+
+<label>Preferred Area</label>
+<select name="prefarea">
+<option value="yes">Yes</option>
+<option value="no">No</option>
+</select>
+
+<label>Furnishing Status</label>
+<select name="furnishingstatus">
+<option value="furnished">Furnished</option>
+<option value="semi-furnished">Semi-Furnished</option>
+<option value="unfurnished">Unfurnished</option>
+</select>
+
+<button type="submit">
+Predict Price
+</button>
+
+</form>
+
+{% if prediction %}
+
+<div class="result">
+
+<h2>Predicted House Price</h2>
+
+<h1>
+₹ {{ "{:,.2f}".format(prediction) }}
+</h1>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>
