@@ -19,8 +19,4 @@ This project predicts house prices using machine learning techniques.
 - Linear Regression R² Score: 0.653
 - Random Forest R² Score: 0.612
 
-## Repository Contents
-- analysis.ipynb
-- Housing.csv
-- summary.pdf
-- charts/
+
