@@ -58,9 +58,8 @@ def home():
             unfurnished
         ]])
 
-        # Predict House Price
-        prediction = model.predict(features)[0]
-
+    # Predict House Price
+    prediction = round(float(model.predict(features)[0]), 2)
     return render_template(
         "index.html",
         prediction=prediction
